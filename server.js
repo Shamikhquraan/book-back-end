@@ -25,6 +25,8 @@ server.get("/test", testHandler);
 server.get("/getBooks", getBooksHandler);
 server.post("/addBook", addBookHandler);
 server.delete('/deletBook/:bookId', deletBookHandler);
+server.put('/updateBook/:bookId', updateBookHandler);
+
 
 function testHandler(req, res) {
   res.send("test");
@@ -87,6 +89,31 @@ async function deletBookHandler(req,res) {
 
 }
 
+
+
+
+async function updateBookHandler(req,res) { 
+  console.log('inside updateBookHandler func');
+  let bookId = req.params.bookId;
+  let { title, description, status,email }=req.body;
+  console.log(req.body);
+  BookModel.findByIdAndUpdate(bookId, { title , description, status, email },(error,updatedData)=>{//updatedDatais for one obj just 
+      if(error) {
+          console.log('error in updating the data')
+      } else {
+          console.log(updatedData,"Data updated!");
+          
+          BookModel.find({email: req.body.email},function(err,data){
+              if(err) {
+                  console.log('error in getting the data')
+              } else {
+                console.log(data);
+                  res.send(data);
+              }
+          })
+      }
+  })
+}
 
 server.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}`);
