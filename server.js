@@ -21,7 +21,7 @@ const BookSchema = require("./model/BookSchema.js");
 
 const BookModel = mongoose.model("books",BookSchema);
 
-server.get("/test", testHandler);
+server.get("/", testHandler);
 server.get("/getBooks", getBooksHandler);
 server.post("/addBook", addBookHandler);
 server.delete('/deletBook/:bookId', deletBookHandler);
