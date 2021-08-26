@@ -60,7 +60,7 @@ async function addBookHandler(req, res) {
   // await newBook.save();
   await BookModel.create({ title, description, status, email });
   // await BookModel.create(req.body)
-  getBooksHandler(req, res); // send data to frontEnd
+  getBooksHandler(req, res); // send data to frontEnd...
 }
 
 
