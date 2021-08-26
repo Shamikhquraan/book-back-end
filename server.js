@@ -76,17 +76,18 @@ function testHandler(req, res) {
 };
 
 // localhost:3001/getBooks?emailName=dark.lord1122@outlook.sa
-function getBooksHandler(req, res) {
+
+async function getBooksHandler(req, res) {
   console.log("inside getCatsHandler func");
   let emailName2 = req.query.email;
-  BookModel.find({ email: emailName2 }, function (err, ownerData) {
+ await BookModel.find({ email: emailName2 }, function (err, ownerData) {
     if (err) {
       console.log("error in getting the data");
     } else {
       console.log(ownerData);
-      res.send(ownerData);
+       res.send(ownerData);
     }
-  });
+  })
 }
 
 // localhost:3002/addBook,{ title: "shamikh",  description: "",  status: "On Stock",  email: "dark.lord1122@outlook.sa" }
