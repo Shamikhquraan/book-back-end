@@ -30,7 +30,7 @@ server.put('/updateBook/:bookId', updateBookHandler);
 
 function testHandler(req, res) {
   res.send("test");
-}
+};
 
 // localhost:3001/getBooks?emailName=dark.lord1122@outlook.sa
 function getBooksHandler(req, res) {
