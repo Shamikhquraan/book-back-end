@@ -11,7 +11,7 @@ server.use(cors());
 const axios = require("axios");
 server.use(express.json());
 // const mongoVar= process.env.MONGO_LINK ;
-mongoose.connect(`${process.env.MONGO_LINK}`, {
+mongoose.connect(`${process.env.MONGO_SERVER_KEY}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
