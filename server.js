@@ -11,7 +11,7 @@ server.use(cors());
 const axios = require("axios");
 server.use(express.json());
 // const mongoVar= process.env.MONGO_LINK ;
-mongoose.connect(`${process.env.MONGO_LINK}`, {
+mongoose.connect(`${process.env.MONGO_SERVER_KEY}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -97,7 +97,7 @@ async function updateBookHandler(req,res) {
   let bookId = req.params.bookId;
   let { title, description, status,email }=req.body;
   console.log(req.body);
-  BookModel.findByIdAndUpdate(bookId, { title , description, status, email },(error,updatedData)=>{//updatedDatais for one obj just 
+  BookModel.findByIdAndUpdate(bookId, { title , description, status, email },(error,updatedData)=>{//updatedDatais for onejhhggj obj just 
       if(error) {
           console.log('error in updating the data')
       } else {
