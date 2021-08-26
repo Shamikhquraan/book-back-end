@@ -10,6 +10,7 @@ const PORT = process.env.PORT;
 server.use(cors());
 const axios = require("axios");
 server.use(express.json());
+
 // const mongoVar= process.env.MONGO_LINK ;
 mongoose.connect(`${process.env.DB_LINK}`, {
   useNewUrlParser: true,
@@ -60,7 +61,7 @@ async function addBookHandler(req, res) {
   // await newBook.save();
   await BookModel.create({ title, description, status, email });
   // await BookModel.create(req.body)
-  getBooksHandler(req, res); // send data tso frontEnd...
+  getBooksHandler(req, res); // send data tso frontEnd......
 }
 
 
