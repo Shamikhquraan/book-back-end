@@ -12,7 +12,7 @@ server.use(cors());
 const axios = require("axios");
 server.use(express.json());
 
-// const mongoVar= process.env.MONGO_LINK ;
+// const mongoVar= process.env.MONGO_LINK  , put the atlas at  .... and here localy ;
 mongoose.connect(`${process.env.DB_LINK}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
