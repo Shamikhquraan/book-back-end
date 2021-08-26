@@ -97,7 +97,7 @@ async function updateBookHandler(req,res) {
   let bookId = req.params.bookId;
   let { title, description, status,email }=req.body;
   console.log(req.body);
-  BookModel.findByIdAndUpdate(bookId, { title , description, status, email },(error,updatedData)=>{//updatedDatais for one obj just 
+  BookModel.findByIdAndUpdate(bookId, { title , description, status, email },(error,updatedData)=>{//updatedDatais for onejhhggj obj just 
       if(error) {
           console.log('error in updating the data')
       } else {
