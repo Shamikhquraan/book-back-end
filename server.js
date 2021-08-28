@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 server.use(cors());
 server.use(express.json());
 
-// const mongoVar= process.env.MONGO_LINK  , put the a .... and dasdsad loc;
+// const mongoVar= process.env.MONGO_LINK  , put the a .... and dffdasdsad loc;
 mongoose.connect(`${process.env.DB_LINK}`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
