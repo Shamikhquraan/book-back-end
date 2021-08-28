@@ -77,10 +77,10 @@ function testHandler(req, res) {
 
 // localhost:3001/getBooks?emailName=dark.lord1122@outlook.sa
 
-async function getBooksHandler(req, res) {
+ function getBooksHandler(req, res) {
   console.log("inside getCatsHandler func");
   let emailName2 = req.query.email;
- await BookModel.find({ email: emailName2 }, function (err, ownerData) {
+  BookModel.find({ email: emailName2 }, function (err, ownerData) {
     if (err) {
       console.log("error in getting the data");
     } else {
